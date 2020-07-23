@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>My Praktikum Blog</title>
+</head>
+<body>
+    <!-- Вставьте имена переменных author, email в необходимые места -->
+    <h1>Вы успешно подписались на публикации автора {{author}}!</h1>
+    <p>Письмо с подтверждением было отправлено по адресу {{email}}.</p>
+    <p>А пока вы можете ознакомиться со списком статей указанного автора.</p>
+    {{ articles | safe }}
+</body>
+</html>

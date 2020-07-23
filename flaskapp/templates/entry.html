@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>{{ the_title }}</h2>
+
+<form method="POST" action="/search4">
+    <table>
+        <p>Use this form to submit a search request:</p>
+        <tr>
+            <td>Phrase:</td>
+            <td>
+                <input name="phrase" type="TEXT" width="60"> 
+            </td>
+        </tr>
+        <tr>
+            <td>Letters:</td>
+            <td>
+                <input name="letters" type="text" value="aeiou">
+            </td>
+        </tr>
+    </table>
+    <p>When you are ready, click this button:</p>
+    <p>
+        <input value="Do it" type="submit">
+    </p>
+</form>
+
+<form method="POST" action="/encod">
+    <table>
+        <tr>
+            <td>encod:</td>
+            <td>
+                <input name="txt" type="text" width="60">
+            </td>
+        </tr>
+    </table>
+    <p>When you are ready, click this button:</p>
+    <p>
+        <input value="to encod" type="submit">
+    </p>
+</form>
+
+<form method="POST" action="/encod">
+    <table>
+        <tr>
+            <td>decod:</td>
+            <td>
+                <input name="txt" type="text" width="60">
+            </td>
+        </tr>
+    </table>
+    <p>When you are ready, click this button:</p>
+    <p>
+        <input value="to decod" type="submit">
+    </p>
+</form>
+
+{% endblock %}
