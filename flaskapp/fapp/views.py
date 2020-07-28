@@ -4,7 +4,8 @@ Routes and views for the flask application.
 
 from datetime import datetime
 from flask import render_template
-from FlaskWeb import app
+from fapp import app
+
 
 @app.route('/')
 @app.route('/home')
@@ -35,3 +36,21 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+    
+@app.route('/viewlog')
+def view_the_log()-> 'html':
+    #with open('vsearch.log') as log:
+    #    contents = log.read()
+    #return escape(contents)
+    contents=[]
+    with open('vsearch.log') as log:
+        for line in log:
+            contents.append([])
+            for item in line.split('|'):
+                contents[-1].append(escape(item))
+    titles = ('Form data', 'Remote addr', 'User agent', 'Results')
+    #return str(contents)
+    return render_template('viewlog.html', 
+                                the_title='View Log',
+                                the_row_titles = titles,
+                                the_data = contents,)
